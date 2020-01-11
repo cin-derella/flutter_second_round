@@ -12,21 +12,24 @@ class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
 
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
 
-class MyAppState extends State <MyApp>{
+class _MyAppState extends State <MyApp>{
+//_MyAppState is a syntax that turns public class to a private class
 
-  var questionIndex = 0;
+  var _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
-          questionIndex = questionIndex + 1;
+          _questionIndex = _questionIndex + 1;
     });
+//setState is a function that forces Flutter to re-render the user interface,but not the entire user interface
+//it updates widget by calling its build method where it calls setState
 
-    print(questionIndex);
+    print(_questionIndex);
   }
 
   @override
@@ -44,11 +47,11 @@ class MyAppState extends State <MyApp>{
         body: Column(
           children: <Widget>[
             Text(
-              questions[questionIndex],
+              questions[_questionIndex],
             ),
             RaisedButton(
               child: Text('Answers 1'),
-              onPressed: answerQuestion,
+              onPressed: _answerQuestion,
               //onPressed requires a function, pass the name of the function,not the result of the function to onPressed: answerQuestion(),
               //so it wont be executed when the code was parsed from top to bottom
             ),
