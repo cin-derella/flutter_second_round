@@ -33,11 +33,17 @@ class MyApp extends StatelessWidget {
             ),
             RaisedButton(
               child: Text('Answers 2'),
-              onPressed: answerQuestion,
+              onPressed: ()=>print('Answer 2 chosen.'),
             ),
+            // the function is a anonymous function that cant be called from outside, it'll be executed only once.
+            //and also it is a function, not the return value of the function and would not execute immediately.
+
             RaisedButton(
               child: Text('Answers 3'),
-              onPressed: answerQuestion,
+              onPressed: (){
+                //...
+                print('and then answer 3 chosen');
+              },
             ),
           ],
         ),
