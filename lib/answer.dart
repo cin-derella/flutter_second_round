@@ -3,9 +3,21 @@ import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
 
   final Function selectHandler;
+  //final Function answerQuestion;
   final String answerText;
-  Answer(this.selectHandler,this. answerText);
+ // final int score;
+ // final Function func;
 
+  Answer(this.selectHandler,this.answerText);
+  //Answer(this.answerQuestion, this.func, this.answerText, this.score);
+
+  // void selectHandler() {
+  //   answerQuestion(score);
+  //   print('abc');
+  // }
+  // void anotherFunc() {
+  //   print('${score}');
+  // }
   @override
   Widget build(BuildContext context) {
     return Container(
